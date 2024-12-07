@@ -1,14 +1,14 @@
 // The second argument/parameter is expected to be a (callback) function
-const findWaldo = function(names, check) {
+const findWaldo = function(names, found) {
   names.forEach((element, index) => {
-    check(element, index);
+    if (element === 'Waldo') {
+      found(index);
+    }
   });
 };
 
-const checkWaldo = (name, index) => {
-  if (name === 'Waldo') {
-    console.log(`Found Waldo at index ${index}!`);
-  }
+const actionWhenFound = (index) => {
+  console.log(`Found Waldo at index ${index}!`);
 };
 
-findWaldo(["Alice", "Bob", "Waldo", "Winston"], checkWaldo);
+findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
