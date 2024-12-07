@@ -11,4 +11,4 @@ const checkWaldo = (name, index) => {
   }
 };
 
-findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
+findWaldo(["Alice", "Bob", "Waldo", "Winston"], checkWaldo);
